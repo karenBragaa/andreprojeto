@@ -27,7 +27,6 @@ function createHearts(num) {
     heart.style.left = Math.random() * 100 + 'vw';
     heart.style.animationDuration = (2 + Math.random() * 3) + 's';
     heartsContainer.appendChild(heart);
-
     setTimeout(() => heart.remove(), 4000);
   }
 }
@@ -36,7 +35,7 @@ function createHearts(num) {
 cards.forEach(card => {
   card.addEventListener('click', () => {
     popupMessage.textContent = card.getAttribute('data-message');
-    popup.classList.add('active');   // troque .hidden por .active para fade suave
+    popup.classList.add('active');
   });
 });
 

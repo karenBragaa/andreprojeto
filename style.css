@@ -13,7 +13,7 @@ body {
   color: #fff;
 }
 
-/* Fundo animado do universo */
+/* Fundo animado */
 .stars, .twinkling {
   position: fixed;
   width: 100%;
@@ -23,13 +23,10 @@ body {
   z-index: 0;
 }
 
-/* Fundo principal de estrelas */
 .stars {
   background: #000 url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-  background-size: cover;
 }
 
-/* Camada de brilho sutil */
 .twinkling {
   background: transparent url('https://www.transparenttextures.com/patterns/tiny-stars.png') repeat;
   animation: moveStars 200s linear infinite;
@@ -50,7 +47,7 @@ body {
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-  width: 80%;
+  width: 85%;
   max-width: 600px;
   margin: 80px auto;
   backdrop-filter: blur(6px);
@@ -59,7 +56,7 @@ body {
 h1 {
   font-family: 'Pacifico', cursive;
   color: #ff85a2;
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 20px;
 }
 
@@ -96,17 +93,11 @@ button:hover {
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0) rotate(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) rotate(720deg);
-    opacity: 0;
-  }
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
 }
 
-/* Cartões de mensagens */
+/* Cartões */
 .cards-container {
   display: flex;
   justify-content: center;
@@ -116,25 +107,25 @@ button:hover {
 }
 
 .card {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   background: #ff4d79;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.8em;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
   background-color: #ff80a1;
 }
 
-/* 🌹 Popup (ajustado com transição suave) */
+/* Popup */
 #popup {
   position: fixed;
   inset: 0;
@@ -156,28 +147,15 @@ button:hover {
 .popup-content {
   background: #fff;
   color: #ff3366;
-  padding: 30px;
+  padding: 25px;
   border-radius: 20px;
   text-align: center;
   font-size: 1.2em;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
   width: 80%;
   max-width: 400px;
-  animation: popupShow 0.4s ease forwards;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
 }
 
-@keyframes popupShow {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* 💖 Botão de fechar */
 #closePopup {
   background-color: #ff3366;
   border: none;
@@ -196,7 +174,6 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* Animação do botão batendo (fofinha 💓) */
 @keyframes heartBeat {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -213,17 +190,29 @@ button:hover {
 #finalMessage span {
   color: #ffb6c1;
   font-family: 'Pacifico', cursive;
-  font-size: 1.2em;
 }
 
-.show {
-  opacity: 1 !important;
-}
+.show { opacity: 1 !important; }
 
-/* Oculto */
 .hidden {
   display: none !important;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+  h1 { font-size: 1.9em; }
+  .message { font-size: 1em; }
+  .card { width: 55px; height: 55px; font-size: 1.5em; }
+  button { padding: 12px 25px; font-size: 1em; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.6em; }
+  .message { font-size: 0.95em; }
+  .card { width: 50px; height: 50px; font-size: 1.3em; }
+  button { font-size: 0.9em; }
 }
