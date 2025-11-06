@@ -13,7 +13,7 @@ body {
   color: #fff;
 }
 
-/* Fundo animado */
+
 .stars, .twinkling {
   position: fixed;
   width: 100%;
@@ -38,7 +38,7 @@ body {
   to { background-position: -10000px 5000px; }
 }
 
-/* Container principal */
+
 .container {
   position: relative;
   z-index: 2;
@@ -66,7 +66,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* Botão principal */
+
 button {
   background-color: #ff3366;
   border: none;
@@ -83,7 +83,7 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* Corações flutuando */
+
 .heart {
   position: fixed;
   color: #ff85a2;
@@ -97,7 +97,7 @@ button:hover {
   100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
 }
 
-/* Cartões */
+
 .cards-container {
   display: flex;
   justify-content: center;
@@ -125,7 +125,7 @@ button:hover {
   background-color: #ff80a1;
 }
 
-/* Popup */
+
 #popup {
   position: fixed;
   inset: 0;
@@ -179,7 +179,7 @@ button:hover {
   50% { transform: scale(1.1); }
 }
 
-/* Mensagem final */
+
 #finalMessage {
   font-size: 1.3em;
   opacity: 0;
@@ -198,7 +198,7 @@ button:hover {
   display: none !important;
 }
 
-/* RESPONSIVIDADE */
+
 @media (max-width: 768px) {
   .container {
     width: 90%;

@@ -6,7 +6,6 @@ const popup = document.getElementById('popup');
 const popupMessage = document.getElementById('popupMessage');
 const closePopup = document.getElementById('closePopup');
 
-// ❤️ Botão principal
 button.addEventListener('click', () => {
   createHearts(20);
   button.innerText = "Te amo, André 💖";
@@ -18,7 +17,7 @@ button.addEventListener('click', () => {
   }, 3000);
 });
 
-// 💗 Função para criar corações flutuantes
+
 function createHearts(num) {
   for (let i = 0; i < num; i++) {
     const heart = document.createElement('div');
@@ -31,7 +30,7 @@ function createHearts(num) {
   }
 }
 
-// 💌 Exibir popup ao clicar nos cartões
+
 cards.forEach(card => {
   card.addEventListener('click', () => {
     popupMessage.textContent = card.getAttribute('data-message');
@@ -39,7 +38,7 @@ cards.forEach(card => {
   });
 });
 
-// 💕 Fechar popup
+
 closePopup.addEventListener('click', () => {
   popup.classList.remove('active');
 });
