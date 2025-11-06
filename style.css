@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+/* Fundo animado do universo */
+.stars, .twinkling {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* Fundo principal de estrelas */
+.stars {
+  background: #000 url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+  background-size: cover;
+}
+
+/* Camada de brilho sutil */
+.twinkling {
+  background: transparent url('https://www.transparenttextures.com/patterns/tiny-stars.png') repeat;
+  animation: moveStars 200s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+/* Container principal */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  width: 80%;
+  max-width: 600px;
+  margin: 80px auto;
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #ff85a2;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Botão principal */
+button {
+  background-color: #ff3366;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff6699;
+  transform: scale(1.1);
+}
+
+/* Corações flutuando */
+.heart {
+  position: fixed;
+  color: #ff85a2;
+  font-size: 2rem;
+  animation: float 4s linear infinite;
+  z-index: 3;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Cartões de mensagens */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.card {
+  width: 60px;
+  height: 60px;
+  background: #ff4d79;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  background-color: #ff80a1;
+}
+
+/* 🌹 Popup (ajustado com transição suave) */
+#popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 9999;
+}
+
+#popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: #fff;
+  color: #ff3366;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  width: 80%;
+  max-width: 400px;
+  animation: popupShow 0.4s ease forwards;
+}
+
+@keyframes popupShow {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 💖 Botão de fechar */
+#closePopup {
+  background-color: #ff3366;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s, transform 0.2s;
+  animation: heartBeat 1.8s infinite ease-in-out;
+}
+
+#closePopup:hover {
+  background-color: #ff6699;
+  transform: scale(1.1);
+}
+
+/* Animação do botão batendo (fofinha 💓) */
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Mensagem final */
+#finalMessage {
+  font-size: 1.3em;
+  opacity: 0;
+  margin-top: 30px;
+  transition: opacity 2s ease;
+}
+
+#finalMessage span {
+  color: #ffb6c1;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2em;
+}
+
+.show {
+  opacity: 1 !important;
+}
+
+/* Oculto */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
